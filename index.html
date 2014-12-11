@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="user-scalable=yes, initial-scale=1.5, maximum-scale=1.5, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <style>
+        h2 {
+            background: url(open.png) no-repeat 0 11px;
+            padding: 10px 0 0 25px;
+            cursor: pointer;
+        }
+        h2.close {
+            background-image: url(close.png);
+        }
+        #first_div.info.close {
+            background-image: url(close.png);
+        }
+        #second_div.info.close {
+            background-image: url(close.png);
+        }
+        #third_div.info.close {
+            background-image: url(close.png);
+        }
+        #first_h2.close {
+            background-image: url(close.png);
+        }
+        #second_h2.close {
+            background-image: url(close.png);
+        }
+        #third_h2.close {
+            background-image: url(close.png);
+        }
+        .profile {
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, .05);
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .info {
+            margin-left: 25px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.info').hide();
+            $('.main h2').click(function () {
+                var $info = $(this).next('.info');
+                if ($info.is(':hidden')) {
+                    $info.slideDown();
+                    $(this).addClass('close');
+                } else {
+                    $info.fadeOut();
+                    $(this).removeClass('close');
+                }
+            }); //end of click
+            $('.main #submit').click(function () {
+                $('#first_div.info').fadeOut();
+                $('#first_h2').removeClass('close')
+                $('#second_div.info').slideDown();
+                $('#second_h2').addClass('close');
+                return false;
+            }); //end of submit click
+            $('#send').click(function(){
+                return false;
+            });//end of send click
+            $('#receive').click(function(){
+                return false;
+            });//end of receive click
+        }); //end of ready
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="profile">
+            <h2 id="first_h2">Sign Up</h2>
+            <div class="info" id="first_div">
+                <form id="signup">
+                    <div>
+                        <label>First Name</label>
+                        <input type="text" id="fname" placeholder="Please type your First Name">
+                    </div>
+                    <div>
+                        <label id="label1">Last Name</label>
+                        <input type="text" id="lname" placeholder="Please type your Last Name">
+                    </div>
+                    <div>
+                        <label id="label2">Email</label>
+                        <input type="text" id="email" placeholder="Please type your email address">
+                    </div>
+                    <div>
+                        <label id="label3">Phone No.</label>
+                        <input type="text" id="phno" placeholder="Please type of phone number">
+                    </div>
+                    <div>
+                        <label id="label4">Date of Birth</label>
+                        <input type="text" id="dob" placeholder="yyyy-mm-dd">
+                    </div>
+                    <div>
+                        <input type="checkbox" id="accept" />
+                        <label id="label5">I accept the terms and condition o the Epic Network</label>
+                    </div>
+                    <div>
+                        <button type="submit" id="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="profile">
+            <h2 id="second_h2">Amount</h2>
+            <div class="info" id="second_div">
+                <form id="sendReceive">
+                    <!-- its a old setting style="display:none">-->
+                    <span id="username"></span>
+                    <br />
+                    <input id="amount" placeholder="enter amount" />
+                    <button type="submit" id="send">Send</button>
+                    <button type="submit" id="receive">Receive</button><span id="result"></span>
+                    <div id="receives" style="display:none">
+                        <div id="qrcode"></div>
+                        <img id="horse" src="Horse_gallop.gif" />
+                        <button type="submit" id="cancelReceive">Cancel</button>
+                    </div>
+                </form>
+                <script data-main="client" src="require.min.js"></script>
+            </div>
+        </div>
+        <div class="profile">
+            <h2 id="third_h2">Result</h2>
+            <div class="info" id="third_div">
+                <p>Please fill the information</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
