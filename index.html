@@ -4,79 +4,16 @@
 <head>
     <meta name="viewport" content="user-scalable=yes, initial-scale=1.5, maximum-scale=1.5, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-        h2 {
-            background: url(https://cloud.githubusercontent.com/assets/9113610/5388332/b8bd053a-80b6-11e4-910a-809b9cdccf7d.png) no-repeat 0 11px;
-            padding: 10px 0 0 25px;
-            cursor: pointer;
-        }
-        h2.close {
-            background-image: url(https://cloud.githubusercontent.com/assets/9113610/5388383/c5929da0-80b7-11e4-8c5a-25f7304ddf51.png);
-        }
-        #first_div.info.close {
-            background-image: url(https://cloud.githubusercontent.com/assets/9113610/5388383/c5929da0-80b7-11e4-8c5a-25f7304ddf51.png);
-        }
-        #second_div.info.close {
-            background-image: url(https://cloud.githubusercontent.com/assets/9113610/5388383/c5929da0-80b7-11e4-8c5a-25f7304ddf51.png);
-        }
-        #third_div.info.close {
-            background-image: url(https://cloud.githubusercontent.com/assets/9113610/5388383/c5929da0-80b7-11e4-8c5a-25f7304ddf51.png);
-        }
-        #first_h2.close {
-            background-image: url(https://cloud.githubusercontent.com/assets/9113610/5388383/c5929da0-80b7-11e4-8c5a-25f7304ddf51.png);
-        }
-        #second_h2.close {
-            background-image: url(https://cloud.githubusercontent.com/assets/9113610/5388383/c5929da0-80b7-11e4-8c5a-25f7304ddf51.png);
-        }
-        #third_h2.close {
-            background-image: url(https://cloud.githubusercontent.com/assets/9113610/5388383/c5929da0-80b7-11e4-8c5a-25f7304ddf51.png);
-        }
-        .profile {
-            border-radius: 10px;
-            background-color: rgba(0, 0, 0, .05);
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-        .info {
-            margin-left: 25px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css"  href="./css/custom.css" />
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('.info').hide();
-            $('.main h2').click(function () {
-                var $info = $(this).next('.info');
-                if ($info.is(':hidden')) {
-                    $info.slideDown();
-                    $(this).addClass('close');
-                } else {
-                    $info.fadeOut();
-                    $(this).removeClass('close');
-                }
-            }); //end of click
-            $('.main #submit').click(function () {
-                $('#first_div.info').fadeOut();
-                $('#first_h2').removeClass('close')
-                $('#second_div.info').slideDown();
-                $('#second_h2').addClass('close');
-                return false;
-            }); //end of submit click
-            $('#send').click(function(){
-                return false;
-            });//end of send click
-            $('#receive').click(function(){
-                return false;
-            });//end of receive click
-        }); //end of ready
-    </script>
+    <script type="text/javascript" src="./js/custom.js"></script>
 </head>
 
 <body>
     <div class="main">
         <div id="logo">
-            <img src="https://cloud.githubusercontent.com/assets/9113610/5389177/148c4eca-80c6-11e4-8f56-ee33d867c61f.png" >
+          <!-- <img src="https://cloud.githubusercontent.com/assets/9113610/5389177/148c4eca-80c6-11e4-8f56-ee33d867c61f.png" >-->
+	  <img src="./img/logo.png" />
         </div>
         <div class="profile">
             <h2 id="first_h2">Sign Up</h2>
